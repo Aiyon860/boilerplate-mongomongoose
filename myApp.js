@@ -1,5 +1,11 @@
-require('dotenv').config();
+require("dotenv").config();
+const mongoose = require("mongoose");
+const { Schema, model } = mongoose;
 
+mongoose
+  .connect(process.env.MONGO_URI)
+  .then(() => console.log("✅  Connection established"))
+  .catch((err) => console.log(err));
 
 let Person;
 
